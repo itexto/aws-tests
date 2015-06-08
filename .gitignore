@@ -1,0 +1,4 @@
+target/*
+*.class
+src/test/*
+nb-configuration.xml
