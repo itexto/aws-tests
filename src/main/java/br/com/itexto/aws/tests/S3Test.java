@@ -42,9 +42,15 @@ public class S3Test extends AWSTest {
     
     private final String fileName;
     
+    private final String endpoint;
+    
     public S3Test(Element element) {
         super(element);
+        endpoint = element.getAttribute("endpoint");
         s3Client = new AmazonS3Client(getCredentials(element));
+        if (endpoint != null) {
+            s3Client.setEndpoint(endpoint);
+        }
         NodeList nodeBucket = element.getElementsByTagName("bucket");
         if (nodeBucket != null && nodeBucket.getLength() == 1) {
             Element bucketElement = (Element) nodeBucket.item(0);

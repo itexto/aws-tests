@@ -39,6 +39,8 @@ public class SQSTest extends AWSTest {
     
     private final SQSTestAction actionTest;
     
+    private final String endpoint;
+    
     public SQSTest(Element element) {
         super(element);
         AWSCredentials credentials = this.getCredentials(element);
@@ -52,6 +54,11 @@ public class SQSTest extends AWSTest {
             //sqsClient.setEndpoint(elementQueue.getAttribute("endpoint"));
         } else {
             throw new AWSException("No queue defined for test");
+        }
+        
+        endpoint = element.getAttribute("endpoint");
+        if (endpoint != null) {
+            sqsClient.setEndpoint(endpoint);
         }
         
         NodeList nodesAction = element.getElementsByTagName("action");
