@@ -1,4 +1,4 @@
-# aws-tests
+﻿# aws-tests
 Ferramentas de testes relacionados aos serviços da AWS usadas pela itexto
 
 # Escrevendo seus testes
@@ -13,10 +13,11 @@ Todos os testes encontram-se contidos na tag <aws-tests>. Atualmente fornecemos 
 
 ### Tags de testes
 
-A tag que usamos para definir nossos testes é <test>, que possuí dois atributos:
+A tag que usamos para definir nossos testes é ```<test>```, que possuí dois atributos:
 
 * type - O tipo de teste a ser executado. Atualmente há apenas SQSTest e S3Test
 * id - O nome do teste
+* endpoint - Opcional, aponta para a URL do endpoint caso esteja usando alguma ferramenta como ElasticMQ ou S3Ninja
 
 Para todos os testes você também deve definir suas credenciais de acesso. Para tal usamos a tag <credentials> que possuí dois atributos:
 
