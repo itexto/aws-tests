@@ -13,7 +13,7 @@ Todos os testes encontram-se contidos na tag <aws-tests>. Atualmente fornecemos 
 
 ### Tags de testes
 
-A tag que usamos para definir nossos testes é ```<test>```, que possuí dois atributos:
+A tag que usamos para definir nossos testes é ```<test>```, que possuí os atributos a seguir:
 
 * type - O tipo de teste a ser executado. Atualmente há apenas SQSTest e S3Test
 * id - O nome do teste
@@ -144,6 +144,16 @@ Exemplo: checando o recebimento de mensagens
 </aws-tests>
 
 ```
+
+## Construindo o projeto
+
+Faça o clone deste repositório e construa o projeto usando Maven com o comando abaixo:
+
+```
+mvn package
+```
+
+Será gerado um arquivo JAR no diretório target que consiste no binário da aplicação.
 
 ## Como executar o S3-tests da itexto
 
